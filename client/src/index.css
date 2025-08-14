@@ -1,0 +1,1793 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Booking.com Inspired Theme - Exact Color Matching */
+.theme-classic {
+  /* CSS Variables for Booking.com Style Theme */
+  --primary: 215 100% 44%;  /* #0071c2 - Booking.com primary blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 212 33% 89%;  /* #dde4ee - Light blue background */
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 220 8.9% 46.1%;
+  --accent: 212 33% 89%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 215 100% 44%;
+  --background: 0 0% 100%;
+  --foreground: 13 10% 15%;  /* #262626 - Dark text */
+  --card: 0 0% 100%;
+  --card-foreground: 13 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+}
+
+/* Booking.com Theme Body Styles */
+body {
+  background: #f5f5f5;  /* Booking.com background color */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  color: #262626;
+}
+
+/* Clean card shadows and borders */
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Clean button and form styles */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  transform: translateY(-1px);
+}
+
+/* Form input styling */
+.form-input {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Clean Professional Theme Component Overrides */
+.theme-classic .main-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.theme-classic h1,
+.theme-classic h2,
+.theme-classic h3 {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.theme-classic .container-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Booking.com Brand Colors */
+.bg-snap-blue {
+  background-color: #0071c2;  /* Booking.com primary blue */
+}
+
+.bg-snap-orange {
+  background-color: #ff8c00;  /* Booking.com orange accent */
+}
+
+.text-snap-blue {
+  color: #0071c2;
+}
+
+.text-snap-orange {
+  color: #ff8c00;
+}
+
+/* Booking.com specific button styles */
+.btn-booking-primary {
+  background-color: #0071c2;
+  color: white;
+  border: 2px solid #0071c2;
+  border-radius: 4px;
+  font-weight: 500;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+}
+
+.btn-booking-primary:hover {
+  background-color: #005999;
+  border-color: #005999;
+}
+
+/* Booking.com style cards */
+.search-result-card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.search-result-card:hover {
+  border-color: #0071c2;
+  box-shadow: 0 4px 16px rgba(0,113,194,0.2);
+  transform: translateY(-2px);
+}
+
+/* Booking.com header style */
+.booking-header {
+  background-color: #003580;  /* Booking.com dark blue header */
+  color: white;
+  padding: 12px 0;
+}
+
+/* Booking.com search form styling */
+.booking-search-form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 24px;
+  margin: -32px 16px 24px 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Modern Cards with Fixed Visibility */
+.theme-modern .card,
+.theme-modern [data-testid*="card"],
+.theme-modern .booking-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  animation: modernSlideIn 0.6s ease-out !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-modern .card:hover,
+.theme-modern [data-testid*="card"]:hover,
+.theme-modern .booking-card:hover {
+  transform: translateY(-8px) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 
+    0 35px 70px rgba(0, 0, 0, 0.4),
+    0 0 50px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Force glassmorphism for content areas */
+.theme-modern .search-form,
+.theme-modern .popular-route-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Modern Buttons */
+.theme-modern .btn-primary,
+.theme-modern button[data-testid*="button"],
+.theme-modern button {
+  background: linear-gradient(135deg, #7877c6, #ff77c6, #77dbff) !important;
+  background-size: 200% 200% !important;
+  border: none !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(120, 119, 198, 0.5) !important;
+  animation: modernGradientShift 3s ease infinite !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  font-weight: 600 !important;
+}
+
+.theme-modern .btn-primary::before,
+.theme-modern button[data-testid*="button"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.theme-modern .btn-primary:hover::before,
+.theme-modern button[data-testid*="button"]:hover::before {
+  left: 100%;
+}
+
+.theme-modern .btn-primary:hover,
+.theme-modern button[data-testid*="button"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 40px rgba(120, 119, 198, 0.8) !important;
+}
+
+/* Secondary Buttons */
+.theme-modern button[variant="ghost"],
+.theme-modern .btn-secondary {
+  background: rgba(30, 30, 80, 0.7) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.4) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.theme-modern button[variant="ghost"]:hover,
+.theme-modern .btn-secondary:hover {
+  background: rgba(120, 119, 198, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* Modern Inputs */
+.theme-modern input,
+.theme-modern .input,
+.theme-modern [data-testid*="input"],
+.theme-modern input[type="text"],
+.theme-modern input[type="email"] {
+  background: rgba(30, 30, 80, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(15px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.theme-modern input:focus,
+.theme-modern .input:focus,
+.theme-modern [data-testid*="input"]:focus {
+  border-color: rgba(120, 119, 198, 1) !important;
+  box-shadow: 0 0 25px rgba(120, 119, 198, 0.6) !important;
+  background: rgba(30, 30, 80, 0.95) !important;
+  outline: none !important;
+}
+
+.theme-modern input::placeholder,
+.theme-modern .input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Modern Dropdowns and Selects */
+.theme-modern .dropdown-content,
+.theme-modern .select-content,
+.theme-modern [data-radix-select-content],
+.theme-modern [role="listbox"] {
+  background: rgba(15, 15, 45, 0.98) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7) !important;
+}
+
+.theme-modern .dropdown-item,
+.theme-modern .select-item,
+.theme-modern [data-radix-select-item],
+.theme-modern [role="option"] {
+  color: rgba(255, 255, 255, 0.9) !important;
+  background: transparent !important;
+}
+
+.theme-modern .dropdown-item:hover,
+.theme-modern .select-item:hover,
+.theme-modern [data-radix-select-item]:hover,
+.theme-modern [role="option"]:hover {
+  background: rgba(120, 119, 198, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.theme-modern [data-radix-select-trigger] {
+  background: rgba(30, 30, 80, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+.theme-modern [data-radix-select-trigger]:focus {
+  border-color: rgba(120, 119, 198, 1) !important;
+  box-shadow: 0 0 25px rgba(120, 119, 198, 0.6) !important;
+}
+
+/* Modern Text and Labels - Fixed White on White Issues */
+.theme-modern p,
+.theme-modern span,
+.theme-modern div,
+.theme-modern label,
+.theme-modern h1,
+.theme-modern h2,
+.theme-modern h3,
+.theme-modern h4,
+.theme-modern h5,
+.theme-modern h6 {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix specific gray text classes */
+.theme-modern .text-gray-600,
+.theme-modern .text-gray-700,
+.theme-modern .text-gray-500 {
+  color: rgba(200, 200, 255, 0.9) !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7) !important;
+}
+
+.theme-modern .text-gray-900,
+.theme-modern .text-black {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern .text-gray-400 {
+  color: rgba(180, 180, 255, 0.8) !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.theme-modern .text-blue-600,
+.theme-modern .text-blue-500 {
+  color: rgba(120, 219, 255, 0.95) !important;
+  text-shadow: 0 0 15px rgba(120, 219, 255, 0.5) !important;
+}
+
+/* Modern Labels with Enhanced Visibility */
+.theme-modern label,
+.theme-modern .label {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
+  text-shadow: 0 0 15px rgba(120, 119, 198, 0.8) !important;
+}
+
+/* Fix white backgrounds in modern theme */
+.theme-modern .bg-white {
+  background: rgba(15, 15, 50, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.theme-modern .bg-gray-50,
+.theme-modern .bg-gray-100 {
+  background: rgba(25, 25, 65, 0.8) !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+.theme-modern .bg-blue-100 {
+  background: rgba(120, 119, 198, 0.3) !important;
+}
+
+.theme-modern .bg-yellow-100 {
+  background: rgba(255, 235, 59, 0.3) !important;
+}
+
+.theme-modern .bg-red-100 {
+  background: rgba(255, 120, 120, 0.3) !important;
+}
+
+/* Modern Navigation */
+.theme-modern nav a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.theme-modern nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7877c6, #ff77c6);
+  transition: width 0.3s ease;
+}
+
+.theme-modern nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(120, 119, 198, 0.8);
+}
+
+.theme-modern nav a:hover::after {
+  width: 100%;
+}
+
+/* Modern Search Form */
+.theme-modern .search-form {
+  background: rgba(20, 20, 40, 0.6);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(120, 119, 198, 0.3);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Modern Autocomplete with Enhanced Contrast */
+.theme-modern .autocomplete-dropdown {
+  background: rgba(5, 5, 30, 0.98) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.8) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern .autocomplete-item {
+  color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom: 1px solid rgba(120, 119, 198, 0.3) !important;
+  background: transparent !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+.theme-modern .autocomplete-item:hover {
+  background: rgba(120, 119, 198, 0.4) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.3) !important;
+}
+
+.theme-modern .autocomplete-item .font-medium {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9) !important;
+}
+
+.theme-modern .autocomplete-item .text-sm {
+  color: rgba(200, 200, 255, 0.9) !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Modern Popular Routes */
+.theme-modern .popular-route-card {
+  background: rgba(25, 25, 50, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(120, 119, 198, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-modern .popular-route-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(120, 119, 198, 0.8), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.theme-modern .popular-route-card:hover::before {
+  opacity: 1;
+}
+
+.theme-modern .popular-route-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(120, 119, 198, 0.3);
+  border-color: rgba(120, 119, 198, 0.6);
+}
+
+/* Modern Icons */
+.theme-modern .lucide {
+  filter: drop-shadow(0 0 5px rgba(120, 119, 198, 0.3));
+}
+
+/* Modern Scrollbar */
+.theme-modern ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.theme-modern ::-webkit-scrollbar-track {
+  background: rgba(30, 30, 60, 0.5);
+}
+
+.theme-modern ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #7877c6, #ff77c6);
+  border-radius: 4px;
+}
+
+.theme-modern ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #9877e6, #ff97d6);
+}
+
+/* Modern Loading Animation */
+.theme-modern .loading-spinner {
+  border-color: rgba(120, 119, 198, 0.2);
+  border-top-color: #7877c6;
+  animation: spin 1s linear infinite, modernGlow 2s ease-in-out infinite;
+}
+
+/* Modern Calendar and Date Picker */
+.theme-modern .calendar,
+.theme-modern [data-radix-popover-content] {
+  background: rgba(15, 15, 50, 0.95) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7) !important;
+}
+
+.theme-modern .calendar button,
+.theme-modern .calendar td {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.theme-modern .calendar button:hover {
+  background: rgba(120, 119, 198, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.theme-modern .calendar [aria-selected="true"] {
+  background: linear-gradient(135deg, #7877c6, #ff77c6) !important;
+  color: #ffffff !important;
+}
+
+/* Modern Popover */
+.theme-modern [data-radix-popover-trigger] {
+  background: rgba(30, 30, 80, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+/* Modern Form Elements */
+.theme-modern .form-control,
+.theme-modern .form-input {
+  background: rgba(30, 30, 80, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: #ffffff !important;
+}
+
+/* Modern Badges */
+.theme-modern .badge {
+  background: rgba(120, 119, 198, 0.8) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(120, 119, 198, 0.4) !important;
+}
+
+/* Modern Toggle Buttons */
+.theme-modern .toggle-group button {
+  background: rgba(30, 30, 80, 0.7) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(120, 119, 198, 0.3) !important;
+}
+
+.theme-modern .toggle-group button[data-state="on"] {
+  background: linear-gradient(135deg, #7877c6, #ff77c6) !important;
+  color: #ffffff !important;
+}
+
+/* Modern Theme Selector Enhancements */
+.theme-modern .theme-selector {
+  background: rgba(20, 20, 40, 0.8);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(120, 119, 198, 0.3);
+}
+
+.theme-modern .theme-option {
+  background: rgba(30, 30, 60, 0.6);
+  border: 1px solid rgba(120, 119, 198, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-modern .theme-option:hover {
+  background: rgba(40, 40, 80, 0.8);
+  border-color: rgba(120, 119, 198, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Modern Error States with Better Contrast */
+.theme-modern .error-message,
+.theme-modern .text-red-600,
+.theme-modern .text-red-500 {
+  color: rgba(255, 150, 150, 0.95) !important;
+  text-shadow: 0 0 15px rgba(255, 100, 100, 0.8) !important;
+  font-weight: 600 !important;
+}
+
+.theme-modern input.error,
+.theme-modern .input-error {
+  border-color: rgba(255, 120, 120, 0.9) !important;
+  box-shadow: 0 0 25px rgba(255, 120, 120, 0.6) !important;
+}
+
+/* Modern Success States */
+.theme-modern .text-green-600,
+.theme-modern .text-green-500 {
+  color: rgba(150, 255, 150, 0.95) !important;
+  text-shadow: 0 0 15px rgba(100, 255, 100, 0.6) !important;
+}
+
+/* Modern Links with Enhanced Visibility */
+.theme-modern a {
+  color: rgba(150, 219, 255, 0.95) !important;
+  text-decoration: none !important;
+  text-shadow: 0 0 12px rgba(120, 219, 255, 0.5) !important;
+}
+
+.theme-modern a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 20px rgba(120, 219, 255, 0.9) !important;
+}
+
+/* Additional white text fixes */
+.theme-modern .text-white {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Fixed booking page specific issues */
+.theme-modern .booking-button {
+  background: linear-gradient(135deg, #7877c6, #ff77c6, #77dbff) !important;
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
+}
+
+.theme-modern .booking-button-secondary {
+  background: rgba(30, 30, 80, 0.9) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix all container and wrapper backgrounds */
+.theme-modern .container,
+.theme-modern .container-main {
+  background: transparent !important;
+}
+
+/* Fix specific component white backgrounds */
+.theme-modern .rounded-lg.bg-white,
+.theme-modern .bg-white.rounded-lg {
+  background: rgba(15, 15, 50, 0.95) !important;
+  backdrop-filter: blur(25px) !important;
+}
+
+/* Fix toggle group backgrounds */
+.theme-modern .bg-gray-100.rounded-lg {
+  background: rgba(30, 30, 80, 0.8) !important;
+  backdrop-filter: blur(15px) !important;
+}
+
+/* Fix specific text color overrides */
+.theme-modern .font-semibold,
+.theme-modern .font-bold,
+.theme-modern .font-medium {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Fix price and numeric displays */
+.theme-modern .text-2xl,
+.theme-modern .text-3xl,
+.theme-modern .text-xl {
+  color: rgba(255, 255, 255, 0.98) !important;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Fix small text */
+.theme-modern .text-sm,
+.theme-modern .text-xs {
+  color: rgba(220, 220, 255, 0.9) !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Fix border colors that might blend with backgrounds */
+.theme-modern .border-gray-200,
+.theme-modern .border-gray-100 {
+  border-color: rgba(120, 119, 198, 0.4) !important;
+}
+
+.theme-modern .border-t,
+.theme-modern .border-b {
+  border-color: rgba(120, 119, 198, 0.3) !important;
+}
+
+/* Fix flight route visualization */
+.theme-modern .w-2.h-2.bg-blue-500 {
+  background: rgba(120, 219, 255, 0.9) !important;
+  box-shadow: 0 0 10px rgba(120, 219, 255, 0.6) !important;
+}
+
+.theme-modern .bg-gray-300 {
+  background: rgba(120, 119, 198, 0.4) !important;
+}
+
+/* Fix icon colors */
+.theme-modern .text-blue-600 svg,
+.theme-modern .text-blue-500 svg {
+  color: rgba(120, 219, 255, 0.9) !important;
+  filter: drop-shadow(0 0 8px rgba(120, 219, 255, 0.5)) !important;
+}
+
+/* Fix date picker and calendar elements */
+.theme-modern .rdp,
+.theme-modern [role="dialog"] {
+  background: rgba(10, 10, 40, 0.98) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-modern .rdp-day {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.theme-modern .rdp-day:hover {
+  background: rgba(120, 119, 198, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.theme-modern .rdp-day_selected {
+  background: rgba(120, 119, 198, 0.8) !important;
+  color: #ffffff !important;
+}
+
+/* Fix button variants */
+.theme-modern button[variant="outline"],
+.theme-modern .btn-outline {
+  background: rgba(20, 20, 60, 0.8) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-modern button[variant="outline"]:hover,
+.theme-modern .btn-outline:hover {
+  background: rgba(120, 119, 198, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Fix select components */
+.theme-modern [role="combobox"],
+.theme-modern .select-trigger {
+  background: rgba(15, 15, 50, 0.9) !important;
+  border: 1px solid rgba(120, 119, 198, 0.5) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-modern [role="listbox"],
+.theme-modern .select-content {
+  background: rgba(10, 10, 40, 0.98) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+}
+
+.theme-modern [role="option"],
+.theme-modern .select-item {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-modern [role="option"]:hover,
+.theme-modern .select-item:hover {
+  background: rgba(120, 119, 198, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Fix toast notifications */
+.theme-modern [data-sonner-toast] {
+  background: rgba(10, 10, 40, 0.98) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Fix dropdown menus */
+.theme-modern [role="menu"] {
+  background: rgba(10, 10, 40, 0.98) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(120, 119, 198, 0.6) !important;
+}
+
+.theme-modern [role="menuitem"] {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-modern [role="menuitem"]:hover {
+  background: rgba(120, 119, 198, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* Fix loading states */
+.theme-modern .animate-spin {
+  border-color: rgba(120, 119, 198, 0.3) !important;
+  border-top-color: rgba(120, 219, 255, 0.9) !important;
+}
+
+/* Fix badge components */
+.theme-modern .badge {
+  background: rgba(120, 119, 198, 0.6) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Fix separator lines */
+.theme-modern .separator,
+.theme-modern hr {
+  background: rgba(120, 119, 198, 0.3) !important;
+  border-color: rgba(120, 119, 198, 0.3) !important;
+}
+
+/* Universal white background override for modern theme */
+.theme-modern * {
+  /* Override any remaining white backgrounds */
+}
+
+.theme-modern *:not(svg):not(path):not(circle):not(rect):not(line):not(polyline):not(polygon) {
+  background-color: inherit !important;
+}
+
+/* Force dark backgrounds on specific white background classes */
+.theme-modern .bg-white {
+  background: rgba(15, 15, 50, 0.95) !important;
+  backdrop-filter: blur(25px) !important;
+}
+
+.theme-modern .bg-gray-50 {
+  background: rgba(20, 20, 60, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Ensure all text has proper contrast */
+.theme-modern * {
+  color: inherit !important;
+}
+
+.theme-modern *:not(.text-purple-300):not(.text-purple-400):not(.text-white):not(.bg-gradient-modern) {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Override any utility classes that might cause white text */
+.theme-modern .text-current {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Fix any remaining card content visibility */
+.theme-modern .card-content,
+.theme-modern .card-header,
+.theme-modern .card-footer {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Fix dialog and modal content */
+.theme-modern [role="dialog"] * {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Force visibility on any stubborn elements */
+.theme-modern .invisible-text {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Final catch-all for any missed white text */
+.theme-modern .text-slate-900,
+.theme-modern .text-slate-800,
+.theme-modern .text-slate-700,
+.theme-modern .text-zinc-900,
+.theme-modern .text-zinc-800,
+.theme-modern .text-neutral-900,
+.theme-modern .text-stone-900 {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Enhanced glassmorphism for modern theme cards */
+.theme-modern .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+}
+
+.theme-modern .bg-white\/10 {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+}
+
+.theme-modern .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.theme-modern .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Force override any blue backgrounds in modern theme */
+.theme-modern .booking-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.theme-modern .search-form {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Specific override for passenger details cards */
+.theme-modern .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Override the card class that's causing the blue background */
+.theme-modern .card,
+.theme-modern [data-testid*="card"],
+.theme-modern .booking-card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Force glassmorphism on all SearchTabs and white backgrounds */
+.theme-modern .bg-white,
+.theme-modern [class*="bg-white"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Target SearchTabs specifically - Nuclear option */
+.theme-modern div[class*="bg-white"],
+.theme-modern div[class*="rounded-lg"],
+.theme-modern div[class*="shadow-lg"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Ultimate override for all white backgrounds in modern theme */
+.theme-modern div,
+.theme-modern section,
+.theme-modern article {
+  background-color: transparent !important;
+}
+
+.theme-modern div[class*="bg-white"],
+.theme-modern div[style*="background"],
+.theme-modern *[class*="bg-white"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Clean booking.com style theme */
+  --background: 0 0% 100%;
+  --foreground: 220 10% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 10% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 10% 15%;
+  --primary: 214 100% 47%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 220 10% 15%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 220 5% 46%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 220 10% 15%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 214 100% 47%;
+  --radius: 0.5rem;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f5f5;
+  color: #262626;
+  line-height: 1.5;
+}
+
+/* Ensure button text is visible */
+button {
+  color: inherit;
+}
+
+/* Fix button visibility */
+.btn-primary {
+  background-color: #0071c2 !important;
+  color: white !important;
+  border: 1px solid #0071c2 !important;
+}
+
+.btn-outline {
+  background-color: white !important;
+  color: #0071c2 !important;
+  border: 1px solid #0071c2 !important;
+}
+
+/* Fix input field visibility */
+input, select {
+  background-color: white !important;
+  color: #262626 !important;
+  border: 1px solid #d1d5db !important;
+}
+
+/* Fix label visibility */
+label {
+  color: #374151 !important;
+  font-weight: 500;
+}
+
+/* Shadcn button overrides */
+[data-testid="button-oneway"],
+[data-testid="button-roundtrip"] {
+  background-color: white !important;
+  color: #0071c2 !important;
+  border: 2px solid #0071c2 !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="button-oneway"][data-state="on"],
+[data-testid="button-roundtrip"][data-state="on"],
+[data-testid="button-oneway"].bg-primary,
+[data-testid="button-roundtrip"].bg-primary {
+  background-color: #0071c2 !important;
+  color: white !important;
+  border: 2px solid #0071c2 !important;
+}
+
+/* Input field overrides */
+[data-testid="input-from-city"],
+[data-testid="input-to-city"] {
+  background-color: white !important;
+  color: #262626 !important;
+  border: 2px solid #e5e7eb !important;
+  font-size: 14px !important;
+}
+
+[data-testid="input-from-city"]:focus,
+[data-testid="input-to-city"]:focus {
+  border-color: #0071c2 !important;
+  box-shadow: 0 0 0 3px rgba(0, 113, 194, 0.1) !important;
+}
+
+/* Date picker button overrides */
+[data-testid="button-departure-date"],
+[data-testid="button-return-date"] {
+  background-color: white !important;
+  color: #262626 !important;
+  border: 2px solid #e5e7eb !important;
+  font-size: 14px !important;
+  justify-content: flex-start !important;
+}
+
+/* Select component overrides */
+[data-testid="select-passengers"],
+[data-testid="select-class"] {
+  background-color: white !important;
+  color: #262626 !important;
+  border: 2px solid #e5e7eb !important;
+  font-size: 14px !important;
+}
+
+/* Search button overrides */
+[data-testid="button-search-flights"] {
+  background-color: #0071c2 !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+}
+
+[data-testid="button-search-flights"]:disabled {
+  background-color: #9ca3af !important;
+  color: white !important;
+  cursor: not-allowed !important;
+}
+
+/* Force visibility for all form elements */
+.space-y-2 label {
+  display: block !important;
+  color: #374151 !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Autocomplete dropdown styling */
+.autocomplete-dropdown {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 9999 !important;
+  max-height: 240px !important;
+  overflow-y: auto !important;
+}
+
+/* Prevent autocomplete interference */
+[data-autocomplete-id] {
+  isolation: isolate;
+}
+
+[data-dropdown-for] {
+  position: absolute !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure all form elements are properly stacked */
+.space-y-2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Search form container should not interfere with popovers */
+.search-form {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper stacking for the entire search card */
+.search-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure autocomplete containers have proper stacking */
+[data-autocomplete-id="from-city"],
+[data-autocomplete-id="to-city"] {
+  position: relative;
+  z-index: 999999;
+}
+
+/* Force all autocomplete dropdowns to highest z-index */
+[data-autocomplete-id] .absolute {
+  z-index: 999999 !important;
+}
+
+/* Specific targeting for autocomplete dropdowns */
+[data-dropdown-for="from-city"],
+[data-dropdown-for="to-city"] {
+  z-index: 999999 !important;
+  position: absolute !important;
+}
+
+/* Override any conflicting z-index from other components */
+[data-autocomplete-id] div[class*="absolute"] {
+  z-index: 999999 !important;
+}
+
+/* Force autocomplete to be on top of everything */
+[data-autocomplete-id] {
+  z-index: 1000000 !important;
+  isolation: isolate !important;
+}
+
+/* Create new stacking context for search form */
+.search-form-container {
+  isolation: isolate;
+}
+
+/* Ensure grid doesn't create stacking context issues */
+.grid {
+  isolation: auto !important;
+}
+
+/* Portal-like behavior for autocomplete */
+[data-dropdown-for] {
+  position: absolute !important;
+  z-index: 2147483647 !important;
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Ensure search form doesn't create stacking context */
+.max-w-6xl {
+  isolation: auto !important;
+}
+
+/* Reset any transform or stacking contexts */
+.CardContent,
+.card {
+  isolation: auto !important;
+  transform: none !important;
+}
+
+/* Ensure form grid doesn't get disrupted by autocomplete */
+.grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+  min-height: auto !important;
+}
+
+/* Prevent autocomplete from affecting layout flow */
+[data-autocomplete-id] {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Improve autocomplete visual appearance */
+[data-dropdown-for] .hover\:bg-gray-50:hover {
+  background-color: #f8fafc !important;
+}
+
+/* Better autocomplete item styling */
+[data-dropdown-for] > div {
+  transition: background-color 0.15s ease-in-out !important;
+}
+
+/* Calendar improvements */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #0071c2;
+  --rdp-background-color: #0071c2;
+  --rdp-accent-color-dark: #005a9e;
+  margin: 0;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Fix popover positioning and z-index */
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+[data-radix-popper-content-wrapper] > div {
+  z-index: 9999 !important;
+}
+
+/* Ensure calendar popover is on top */
+.rdp-popover,
+[role="dialog"] {
+  z-index: 9999 !important;
+  position: relative !important;
+}
+
+/* Calendar navigation improvements */
+.rdp-nav_button {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.rdp-nav_button:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Calendar day styling */
+.rdp-day {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+}
+
+.rdp-day:hover {
+  background-color: #f0f9ff !important;
+  color: #0071c2 !important;
+}
+
+.rdp-day_selected {
+  background-color: #0071c2 !important;
+  color: white !important;
+}
+
+.rdp-day_selected:hover {
+  background-color: #005a9e !important;
+}
+
+.rdp-day_today {
+  font-weight: 600 !important;
+  color: #0071c2 !important;
+}
+
+.rdp-day_disabled {
+  color: #d1d5db !important;
+  opacity: 0.5 !important;
+}
+
+/* Calendar header styling */
+.rdp-caption_label {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+}
+
+.rdp-head_cell {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #6b7280 !important;
+}
+
+.autocomplete-item {
+  padding: 12px 16px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.autocomplete-item:hover {
+  background-color: #f9fafb !important;
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none !important;
+}
+
+.autocomplete-city-name {
+  font-weight: 500 !important;
+  color: #111827 !important;
+  font-size: 14px !important;
+}
+
+.autocomplete-airport-name {
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  margin-top: 2px !important;
+}
+
+.autocomplete-city-code {
+  color: #9ca3af !important;
+  font-size: 12px !important;
+  font-family: monospace !important;
+}
+
+/* Clean card styles like booking.com */
+.booking-card {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.booking-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Header styles */
+.main-header {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Search form styles */
+.search-form {
+  background: white;
+  border: 2px solid #febb02;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styles like booking.com */
+.booking-button {
+  background: #0071c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.booking-button:hover {
+  background: #005999;
+}
+
+.booking-button-secondary {
+  background: white;
+  color: #0071c2;
+  border: 1px solid #0071c2;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.booking-button-secondary:hover {
+  background: #0071c2;
+  color: white;
+}
+
+/* Price display */
+.price-display {
+  color: #008009;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.price-original {
+  color: #6b6b6b;
+  text-decoration: line-through;
+  font-size: 14px;
+}
+
+/* Rating styles */
+.rating-badge {
+  background: #003580;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Location and amenity tags */
+.amenity-tag {
+  background: #f5f5f5;
+  color: #262626;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid #e5e5e5;
+}
+
+/* Search filters */
+.filter-section {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Form inputs */
+.form-input {
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;
+  background: white;
+}
+
+.form-input:focus {
+  border-color: #0071c2;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 113, 194, 0.2);
+}
+
+/* Alert styles */
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+.alert-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 12px 16px;
+}
+
+/* Layout improvements */
+.container-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.search-results-header {
+  background: white;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+/* Travel mode specific colors */
+.flight-accent { color: #0071c2; }
+.hotel-accent { color: #b83280; }
+.train-accent { color: #008009; }
+.bus-accent { color: #ff8c00; }
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .container-main {
+    padding: 0 15px;
+  }
+  
+  .booking-card {
+    margin-bottom: 15px;
+  }
+}
+
+/* Typography improvements */
+.heading-lg {
+  font-size: 28px;
+  font-weight: 700;
+  color: #262626;
+  margin-bottom: 8px;
+}
+
+.heading-md {
+  font-size: 20px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 6px;
+}
+
+.text-muted {
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+.text-small {
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+/* Remove the dark theme glassmorphism styles */
+.glass {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Clean modern button styles */
+.modern-button {
+  background: #0071c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-button:hover {
+  background: #005999;
+}
+
+.modern-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Dropdown menu overrides for better visibility */
+[data-radix-popper-content-wrapper] {
+  z-index: 9999 !important;
+}
+
+.dropdown-content,
+[data-testid="user-dropdown-menu"] {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: none !important;
+}
+
+/* Override any glass effects on dropdown */
+[role="menu"] {
+  background: white !important;
+  backdrop-filter: none !important;
+}
+
+/* Ensure dropdown menu items are visible */
+[data-radix-dropdown-menu-content] {
+  background: white !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Flight form improvements */
+.flight-search-form .popover-content {
+  z-index: 60 !important;
+}
+
+/* Better select dropdown styling */
+.select-trigger {
+  transition: all 0.2s ease;
+}
+
+.select-trigger:hover {
+  border-color: hsl(215, 20%, 75%);
+}
+
+/* Disabled button styling */
+.search-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Form field spacing */
+.form-field-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Popular routes hover effect */
+.popular-route-card:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Additional form input styles */
+.modern-input-small {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #374151;
+  transition: border-color 0.2s ease;
+}
+
+.modern-input-small:focus {
+  outline: none;
+  border-color: #0071c2;
+  box-shadow: 0 0 0 3px rgba(0, 113, 194, 0.1);
+}
+
+/* Secondary button style */
+.booking-button-secondary {
+  background: white;
+  color: #0071c2;
+  border: 1px solid #0071c2;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-button-secondary:hover {
+  background: #0071c2;
+  color: white;
+}
+
+/* Booking input styles */
+.booking-input {
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #374151;
+  transition: border-color 0.2s ease;
+  width: 100%;
+}
+
+.booking-input:focus {
+  outline: none;
+  border-color: #0071c2;
+  box-shadow: 0 0 0 3px rgba(0, 113, 194, 0.1);
+}
+
+/* Theme System */
+.theme-container {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-aware components */
+[data-theme="booking"] {
+  --bg-primary: rgb(249, 250, 251);
+  --text-primary: rgb(17, 24, 39);
+  --card-bg: rgb(255, 255, 255);
+  --accent-color: rgb(0, 113, 194);
+}
+
+[data-theme="night"] {
+  --bg-primary: rgb(17, 24, 39);
+  --text-primary: rgb(243, 244, 246);
+  --card-bg: rgb(31, 41, 55);
+  --accent-color: rgb(99, 102, 241);
+}
+
+[data-theme="future"] {
+  --bg-primary: rgb(15, 23, 42);
+  --text-primary: rgb(241, 245, 249);
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --accent-color: rgb(99, 102, 241);
+}
+
+[data-theme="ocean"] {
+  --bg-primary: rgb(240, 249, 255);
+  --text-primary: rgb(12, 74, 110);
+  --card-bg: rgb(255, 255, 255);
+  --accent-color: rgb(8, 145, 178);
+}
+
+[data-theme="sunset"] {
+  --bg-primary: rgb(255, 247, 237);
+  --text-primary: rgb(124, 45, 18);
+  --card-bg: rgb(255, 255, 255);
+  --accent-color: rgb(234, 88, 12);
+}
+
+[data-theme="forest"] {
+  --bg-primary: rgb(240, 253, 244);
+  --text-primary: rgb(20, 83, 45);
+  --card-bg: rgb(255, 255, 255);
+  --accent-color: rgb(5, 150, 105);
+}
+
+/* Update existing classes to be theme-aware */
+.booking-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+[data-theme="night"] .booking-card,
+[data-theme="future"] .booking-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="future"] .booking-card {
+  backdrop-filter: blur(16px);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.booking-button {
+  background: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.booking-button:hover {
+  filter: brightness(1.1);
+}
+
+.main-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+[data-theme="night"] .main-header,
+[data-theme="future"] .main-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="future"] .main-header {
+  backdrop-filter: blur(16px);
+  background: rgba(30, 41, 59, 0.9);
+}
